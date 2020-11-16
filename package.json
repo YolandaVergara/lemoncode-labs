@@ -1,0 +1,23 @@
+{
+  "name": "lemoncode-labs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YolandaVergara/lemoncode-labs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YolandaVergara/lemoncode-labs/issues"
+  },
+  "homepage": "https://github.com/YolandaVergara/lemoncode-labs#readme",
+  "devDependencies": {
+    "sass": "^1.29.0"
+  }
+}

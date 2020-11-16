@@ -1,0 +1,45 @@
+@import "light-theme.scss";
+// @import "dark-theme.scss";
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  article {
+    width: 250px;
+    height: 125px;
+    padding: 10px;
+    margin: 2px;
+  }
+}
+
+.base {
+  border: $border;
+  background-color: $color1;
+}
+
+.important {
+  border: $border;
+  background-color: $color2;
+}
+
+.warning {
+  border: $border;
+  background-color: $color3;
+}
+
+.font {
+  :nth-child(1) {
+    font-family: $primary-font;
+  }
+  :nth-child(2) {
+    font-family: $secondary-font;
+  }
+}
+
+.shadow-box {
+  border: $border;
+  box-shadow: -10px 10px 5px 0px $color1;
+}

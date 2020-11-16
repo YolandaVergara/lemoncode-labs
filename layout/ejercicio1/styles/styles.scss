@@ -1,0 +1,10 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+
+@each $color in $colors {
+  @for $i from 1 to 4 {
+    .container-#{$i} {
+      @include boxParams;
+    }
+  }
+}
