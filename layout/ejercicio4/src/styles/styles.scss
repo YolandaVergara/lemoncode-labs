@@ -1,0 +1,27 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: content-box;
+}
+
+section {
+  width: 20%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 2fr 2fr 1fr;
+  grid-gap: 10px 0px;
+}
+  .image {
+   grid-column: 3fr;
+   grid-row: 2fr;
+  }
+
+  .content {
+    grid-column: 3fr;
+    grid-row: 2fr;
+  }
+
+  .button {
+    grid-area: button;
+  }
