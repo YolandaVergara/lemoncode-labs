@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/YolandaVergara/lemoncode-labs#readme",
   "devDependencies": {
-    "sass": "^1.29.0"
+    "sass": "^1.29.0",
+    "typescript": "^4.0.5"
   }
 }
