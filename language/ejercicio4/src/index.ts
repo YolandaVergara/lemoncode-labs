@@ -1,4 +1,3 @@
-
 class Book {
   title: string;
   isRead: boolean;
