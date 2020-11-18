@@ -1,9 +1,3 @@
-
-class Book {
-  title: string;
-  isRead: boolean;
-}
-
 const books = [
   {
     title: "Harry Potter y la piedra filosofal",
@@ -35,19 +29,22 @@ const books = [
   }
 ];
 
+class Book {
+  title: string;
+  isRead: boolean;
+}
 
-
-// Crea una función isBookRead que reciba una lista de libros y un título y devuelva si se
+// Crea una función isBookRead que reciba una lista de libros y un tulo y devuelva si se
 // ha leído o no dicho libro.
 // Un libro es un objeto con title como string y isRead como booleano. En caso de no
 // exisr el libro devolver false
 // TIP: Existe un método de Array.prototype que te ayudará a buscar según un patrón.
 
-const filterBookIsRead = (book: Book, title: string) => book.title === title && book.isRead;
-const bookIsRead = (books: Book[], title: string) => books.some((book) => {
-  return filterBookIsRead(book, title) ? true : false;
+
+const bookRead = (books: Book[], title: string):boolean => books.some((book) => {
+  return book.title === title && book.isRead ? true : false;
 })
 
-console.log(bookIsRead(books, "Harry Potter y y la Orden del Fénix"));
-console.log(bookIsRead(books, "Los juegos del hambre: En llamas"));
-console.log(bookIsRead(books, "Divergente"));
+console.log(bookRead(books, "Harry Potter y y la Orden del Fénix"));
+console.log(bookRead(books, "Los juegos del hambre: En llamas"));
+console.log(bookRead(books, "Divergente"));
