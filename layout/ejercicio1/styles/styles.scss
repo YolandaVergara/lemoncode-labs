@@ -1,10 +1,40 @@
 @import "_variables.scss";
 @import "_mixins.scss";
 
-@each $color in $colors {
-  @for $i from 1 to 4 {
-    .container-#{$i} {
-      @include boxParams;
-    }
+@for $i from 1 to 4 {
+  .container-#{$i} {
+    display: flex;
+  }
+  .box {
+    @include boxParams;
+  }
+  @each $color in $baseColor {
+    @include colorRange($color);
   }
 }
+
+// .container-1 {
+//   display:flex;
+//   .box {
+//     border: 2px solid blue;
+//     @include boxParams;
+//   }
+//   @include colorRange($baseColor1);
+// }
+
+// .container-2 {
+//   display:flex;
+//   .box {
+//     border: 2px solid blue;
+//     @include boxParams;
+//   }
+//   @include colorRange($baseColor2);
+// }
+
+// .container-3 {
+//   display:flex;
+//   .box {
+//     border: 2px solid blue;
+//     @include boxParams;
+//   }
+//   @include colorRange($baseColor3);}
