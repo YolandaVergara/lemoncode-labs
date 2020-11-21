@@ -21,17 +21,12 @@ function Person(name, species, gender, house) {
   this.house = house;
 }
 
-var ron = new Person("Ron Weasley", "human", "male", "Gryffindor");
-var hermione = new Person("Hermione Granger", "human", "female", "Gryffindor");
-console.log(ron);
-console.log(hermione);
-
 Person.prototype.sayHouse = function () {
-  console.log(`My Howarts house is ${this.Person.house}`);
+  console.log(`My Howarts house is ${this.house}`);
 }
 
-// Ron.prototype.sayName = function () {
-//   console.log(`My name is ${this.name}`)
-// }
+var hermione = new Person("Hermione Granger", "human", "female", "Gryffindor");
+values(hermione);
+
 
 
