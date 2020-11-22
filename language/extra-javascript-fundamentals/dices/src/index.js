@@ -24,8 +24,7 @@ function playGame() {
     diceTwo = null;
   };
 
-  return {    
-  
+  return {     
     throwDices: function () { 
       getNumbers();
       console.log(`El primer dado ha sacado ${diceOne} y el segundo dado ha sacado ${diceTwo}`);
