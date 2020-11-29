@@ -1,4 +1,5 @@
-// En un formulario tenemos un objeto con los campos name, surname y age que representan un usuario. Crea una función set que reciba un objeto con los campos de usuario, el nombre de una propiedad y su valor y actualice la propiedad del objeto con el valor pasado como argumento.
+// En un formulario tenemos un objeto con los campos name, surname y age que representan un usuario. Crea una función set que reciba un objeto con los campos de usuario, 
+///el nombre de una propiedad y su valor y actualice la propiedad del objeto con el valor pasado como argumento.
 
 // El ejercicio debe cumplir la siguiente norma: la función debe ser pura, es decir, debe crear un nuevo objeto sin modificar el existente.
 
