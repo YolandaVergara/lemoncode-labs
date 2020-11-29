@@ -1,4 +1,7 @@
-// Utilizando TypeScript escribe una función que reciba una lista de estudiantes (que tienen nombre y una lista de notas) y devuelva otra lista donde por cada estudiante devuelva su nombre, su nota más alta y la media de sus notas.
+// Utilizando TypeScript escribe una función que reciba una lista de estudiantes (que tienen nombre y una lista de notas) 
+// y devuelva otra lista donde por cada estudiante devuelva su nombre, su nota más alta y la media de sus notas.
+
+import { ENGINE_METHOD_PKEY_ASN1_METHS } from "constants";
 
 // Crea para ello dos entidades, una para representar al estudiante (Student) y otra para representar su nombre, nota más alta y media de notas (StudentSummary).
 
@@ -12,10 +15,30 @@ const students = [
   { name: "Mónica", califications: [9.72, 6.07, 1.11, 4.72, 0.04, 1.56, 0.66, 3.87, 6.97, 9.48] },
 ];
 
-const summarizeClassRoom = studentList => {
-  // Implementation here
+interface Student {
+  name: string;
+  califications: number[];
 };
 
+interface StudentSummary {
+  name: string;
+  highestCalification: string;
+  averageCalification: number;
+};
+
+const summarizeClassRoom = (studentList: Student[]): StudentSummary[] => {
+  let summarizeClassRoom: StudentSummary[] = [];
+  studentList.forEach(student => {
+    let dataStudent: StudentSummary = {
+      name: student.name,
+      highestCalification: Math.max(...student.califications).toPrecision(3),
+      averageCalification: student.califications.reduce((acc, currentValue) => acc + currentValue)
+    };
+    summarizeClassRoom.push(dataStudent)
+  }
+  );
+  return summarizeClassRoom;
+};
 console.log(summarizeClassRoom(students));
 // [
 //   { name: 'Juan', highestCalification: 9.71, averageCalifications: '5.37' },
