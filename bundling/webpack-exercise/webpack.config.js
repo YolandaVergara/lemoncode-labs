@@ -62,4 +62,7 @@ module.exports = {
       chunkFilename: "[id].css",
     }),
   ],
+  devServer: {
+    stats: "errors-only",
+  },
 };
