@@ -1,0 +1,9 @@
+$primary-color: rgb(149, 149, 214);
+
+.background {
+  color: $primary-color;
+
+  .logo {
+    width: 300px;
+  }
+}
