@@ -6,8 +6,12 @@ const basePath = __dirname
 
 module.exports = {
   context: path.join(basePath, "src"),
+  resolve: {
+    extensions: [".js", ".ts", ".tsx"],
+  },
+  devtool: "eval-source-map",
   entry: {
-    app: ["./index.js"],
+    app: ["./index.tsx"],
     appStyles: ["./styles.scss"],
     vendorStyles: ["../node_modules/bootstrap/dist/css/bootstrap.css"],
   },
@@ -19,7 +23,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         loader: "babel-loader",
       },
@@ -28,11 +32,21 @@ module.exports = {
         type: "asset/resource",
       },
       {
-        test: /\.scss$/,
-        exclude: /node_modules/,
+        test: /\.scss$/,    
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
+          {
+            loader: "css-loader",
+            options: {
+              import: false,
+              modules: {
+                exportLocalsConvention: "camelCase",
+                localIdentName: "[path][name]__[local]--[hash:base64:5]",
+                localIdentContext: path.resolve(__dirname, "src"),
+                localIdentHashPrefix: "my-custom-hash",
+              }
+            },
+          },          
           {
             loader: "sass-loader",
             options: {
@@ -62,7 +76,4 @@ module.exports = {
       chunkFilename: "[id].css",
     }),
   ],
-  devServer: {
-    stats: "errors-only",
-  },
 };
